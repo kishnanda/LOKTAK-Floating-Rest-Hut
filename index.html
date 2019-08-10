@@ -281,6 +281,13 @@
 
 
 <!--js script-->
+    <script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>
 <script src="js/smooth-scroll.js"></script>
 <script>
         var scroll = new SmoothScroll('a[href*="#"]');
