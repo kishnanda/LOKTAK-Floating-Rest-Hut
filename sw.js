@@ -12,7 +12,7 @@ self.addEventListener('install', function(e) {
 
                   'js/smooth-scroll.js',
 
-                  'style.css',
+                  'img/profilepic.jpg',
 
                   'style.css',
          'style.css',
