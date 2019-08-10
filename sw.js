@@ -9,7 +9,7 @@ self.addEventListener('install', function(e) {
        'index.html',
          'style.css',
          'style.css',
-          'js/smooth-scroll.js',
+          'js',
 
      ]);
    })
