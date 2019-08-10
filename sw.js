@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+const cacheName = 'v2';
 
 const cacheAssets = [
 'index.html',
@@ -22,4 +22,18 @@ self.addEventListener('install', e => {
 
 self.addEventListener('activate', e => {
    console.log("Service Worker: Activated");
+   //remove unwanted caches
+   e.waitUntill(
+    caches.key().then(cacheNames => {
+     return Promise.all(
+      cachesNames.map(cache => {
+       if(cache !== cacheName) {
+        console.log('Service Worker: Clearing Old Cache');
+          return caches.delete(cache);
+       }
+      })
+     )
+    })
+   );   
 });
+
