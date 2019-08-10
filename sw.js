@@ -1,15 +1,16 @@
-importScripts('serviceworker-cache-polyfill.js');
+    importScripts('cache-polyfill.js');
 
-// example usage:
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('demo-cache').then(function(cache) {
-      return cache.put('/', new Response("From the cache!"));
-      '/',
-        'index.html',
+
+self.addEventListener('install', function(e) {
+ e.waitUntil(
+   caches.open('airhorner').then(function(cache) {
+     return cache.addAll([
+       '/',
+       'index.html',
          'style.css',
-    })
-  );
+     ]);
+   })
+ );
 });
 
 self.addEventListener('fetch', function(event) {
